@@ -1,7 +1,7 @@
 var display = document.getElementById("screen");
 var buttons = document.getElementsByClassName("button");
   
-  Array.prototype.forEach.call(buttons, function(button) {
+  Array.prototype.forEach.call(buttons, function(button) {//assigned each button it's function by creating an array of every element with classname "button", looping through it and calling each button
   button.addEventListener("click", function() {
     if (button.textContent != "=" && 
     button.textContent != "C" && 
@@ -68,14 +68,14 @@ var buttons = document.getElementsByClassName("button");
   });
 });
 
-
+//for syntax errors
 function syntaxError() {
   if (eval(display.value) == SyntaxError || eval(display.value) == ReferenceError || eval(display.value) == TypeError) {
     display.value == "Syntax Error";
   }
 }
 
-
+//adding trigger functions
 function equals() {
   if ((display.value).indexOf("^") > -1) {
     var base = (display.value).slice(0, (display.value).indexOf("^"));
@@ -96,6 +96,7 @@ function backspace() {
   display.value = display.value.substring(0, display.value.length - 1);
 }
 
+//defining the functions using the Javascript Math Object
 function multiply() {
   display.value += "*";
 }
